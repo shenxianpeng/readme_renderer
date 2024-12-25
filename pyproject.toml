@@ -1,6 +1,6 @@
 [project]
 name = "readme_renderer"
-version = "44.0"
+version = "44.2"
 description = "readme_renderer is a library for rendering readme descriptions for Warehouse"
 authors = [
   {name = "The Python Packaging Authority", email = "admin@mail.pypi.org"}
@@ -36,7 +36,7 @@ classifiers = [
 requires-python = ">=3.9"
 
 [project.optional-dependencies]
-md = ["cmarkgfm>=0.8.0"]
+md = ["cmarkgfm>=2024.11.20"]
 
 [tool.setuptools]
 include-package-data = true

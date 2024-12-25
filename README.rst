@@ -14,6 +14,8 @@ reStructuredText (``.rst``), and plain text.
 
 .. _Warehouse: https://github.com/pypa/warehouse
 
+term : classifier
+    Definition
 
 Check Description Locally
 -------------------------
