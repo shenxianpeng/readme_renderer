@@ -15,6 +15,7 @@
 from typing import Dict, Optional, Set
 
 import nh3
+import re
 
 
 ALLOWED_TAGS = {
@@ -65,6 +66,12 @@ ALLOWED_ATTRIBUTES = {
 }
 
 
+def normalize_definition_lists(original_html: str) -> str:
+    # Add a space between term and classifier
+    new_html = re.sub(r'(<dt>.*?)(<span class="classifier">)', r'\1 \2', original_html)
+    return new_html
+
+
 def clean(
     html: str,
     tags: Optional[Set[str]] = None,
@@ -83,6 +90,8 @@ def clean(
             link_rel="nofollow",
             url_schemes={"http", "https", "mailto"},
         )
+
+        cleaned = normalize_definition_lists(cleaned)
 
         return cleaned
     except ValueError:
